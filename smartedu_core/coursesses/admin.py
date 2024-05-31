@@ -5,7 +5,7 @@ from . models import Course, Category, Tag
 # Register your models here.
 @admin.register(Course)
 class CouurseAdmin(admin.ModelAdmin):
-    list_display = ('name','available')
+    list_display = ('name','available','teacher')  # admin arayüzündeki görünen column ile ilgi görmek istediğin özellikleri ekleyebilirsin
     list_filter = ('available',)
     search_fields = ('name', 'description')
     
