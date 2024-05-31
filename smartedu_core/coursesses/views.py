@@ -30,12 +30,17 @@ def course_list(request, category_slug=None, tag_slug=None):
 
 
 def course_detail(request, category_slug, course_id):
+    current_user = request.user
     course = Course.objects.get(category__slug=category_slug, id = course_id)
-    categories = Category.objects.all()
+    courses = Course.objects.all().order_by('-date') 
+    categories = categories = Category.objects.all()
+    tags = Tag.objects.all()
 
     context = {
         'course': course,
-      
+        # 'enrolled_courses': enrolled_courses,
+        'categories': categories,
+        'tags': tags
     }
 
     return render(request, 'course.html', context)
