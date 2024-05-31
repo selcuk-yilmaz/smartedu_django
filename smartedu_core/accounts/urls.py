@@ -10,3 +10,4 @@ urlpatterns = [
 
 
 ]
+# kull adı=admin paralo=Admin4518***
